@@ -2,6 +2,7 @@
 
 from sys import argv
 
+
 class RGB:
     def __init__(self):
         self.r = 0
@@ -9,7 +10,7 @@ class RGB:
         self.b = 0
 
     def set(self, r, g, b):
-        if r + g + b <= 255 * 3 and (r >= 0 and g >= 0 and b>= 0):
+        if r + g + b <= 255 * 3 and (r >= 0 and g >= 0 and b >= 0):
             self.r = r
             self.g = g
             self.b = b
@@ -34,15 +35,15 @@ def get_inverted_colors(file):
         rgb.invert()
         inverted.append(rgb)
     f.close()
-    
+
     return inverted
 
 
 def main():
     inverted = get_inverted_colors(argv[1])
     for color in inverted:
-       print(f'{color}\n') 
+        print(f'{color}\n')
 
-    
+
 if __name__ == '__main__':
     main()
